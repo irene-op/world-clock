@@ -45,7 +45,8 @@ function displayCity(event) {
                     <div class="date">${cityTime.format("MMMM D, YYYY")}</div>
                 </div>
                 <div class="time">${cityTime.format("hh:mm:ss")} <small>${cityTime.format("A")}</small></div>
-            </div>`;
+            </div>
+            <a href="/">Back to main</a>`;
     
     setTimeout(() => {
         displayCity(event)
