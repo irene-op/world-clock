@@ -30,6 +30,11 @@ setInterval(updateTime, 1000);
 // Select and display new city from drop-down menu
 function displayCity(event) {
     let cityTimeZone = event.target.value;
+
+    if (event.target.value === "currentCity") {
+        cityTimeZone = moment.tz.guess();
+    }
+
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
     let cityTime = moment().tz(cityTimeZone);
     let citiesElement = document.querySelector("#display-cities");
@@ -49,3 +54,5 @@ function displayCity(event) {
 
 let selectCityElement = document.querySelector("#select-city")
 selectCityElement.addEventListener("change", displayCity)
+
+console.log(moment.tz.guess());
