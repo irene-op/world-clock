@@ -31,7 +31,7 @@ setInterval(updateTime, 1000);
 function displayCity(event) {
     let cityTimeZone = event.target.value;
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-    let cityTime = moment().tz("cityTimeZone");
+    let cityTime = moment().tz(cityTimeZone);
     let citiesElement = document.querySelector("#display-cities");
     citiesElement.innerHTML = `
     <div class="city">
@@ -42,9 +42,9 @@ function displayCity(event) {
                 <div class="time">${cityTime.format("hh:mm:ss")} <small>${cityTime.format("A")}</small></div>
             </div>`;
     
-    console.log(cityTimeZone);
-    console.log(cityTime.format("hh:mm:ss A"));
-    //console.log(cityDate);
+    setTimeout(() => {
+        displayCity(event)
+    }, 1000);
 }
 
 let selectCityElement = document.querySelector("#select-city")
