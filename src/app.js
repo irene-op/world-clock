@@ -22,6 +22,28 @@ function updateTime(){
         sydneyDateElement.innerHTML = moment().tz("Australia/Sydney").format("MMMM D, YYYY");
         sydneyTimeElement.innerHTML = moment().tz("Australia/Sydney").format("hh:mm:ss [<small>]A[</small>]");
     }
+
+    // Bogota
+    let bogotaElement = document.querySelector("#bogota");
+    if (bogotaElement) {
+        
+        let bogotaDateElement = bogotaElement.querySelector(".date")
+        let bogotaTimeElement = bogotaElement.querySelector(".time")
+
+        bogotaDateElement.innerHTML = moment().tz("America/Bogota").format("MMMM D, YYYY");
+        bogotaTimeElement.innerHTML = moment().tz("America/Bogota").format("hh:mm:ss [<small>]A[</small>]");
+    }
+
+    // Madrid
+    let madridElement = document.querySelector("#madrid");
+    if (madridElement) {
+        
+        let madridDateElement = madridElement.querySelector(".date")
+        let madridTimeElement = madridElement.querySelector(".time")
+
+        madridDateElement.innerHTML = moment().tz("Europe/Madrid").format("MMMM D, YYYY");
+        madridTimeElement.innerHTML = moment().tz("Europe/Madrid").format("hh:mm:ss [<small>]A[</small>]");
+    }
 }
 
 updateTime();
